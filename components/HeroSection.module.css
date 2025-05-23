@@ -1,0 +1,228 @@
+.hero-section {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh; /* Memastikan container hero mengambil tinggi penuh */
+  position: relative;
+  max-width: 1400px; /* Sesuaikan lebar maksimum container */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-sidebar-left,
+.hero-sidebar-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  z-index: 10;
+}
+
+.hero-sidebar-left {
+  left: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-sidebar-right {
+  right: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-top,
+.sidebar-bottom {
+  text-align: center;
+}
+
+.dots {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.rotate-text {
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  margin: 2rem 0;
+  display: block;
+}
+
+.arrow-down {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+
+.hero-content {
+  z-index: 5;
+  flex-grow: 1; /* Memungkinkan konten mengambil ruang yang tersedia */
+  padding-left: 100px; /* Offset untuk sidebar kiri */
+  padding-right: 100px; /* Offset untuk sidebar kanan */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.freelance-text {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.arrow-icon {
+  font-size: 1.2rem;
+  margin-left: 5px;
+  display: inline-block;
+  transform: rotate(-45deg);
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.designer-text {
+  color: #98ff00 !important;
+}
+
+.work-process {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.play-button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.play-button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.work-process-text {
+  color: #fff;
+  font-size: 1rem;
+  margin-right: 20px;
+}
+
+.black-circle {
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Tambahkan border agar terlihat */
+}
+
+.hero-profile-col {
+  position: absolute;
+  right: 80px; /* Sesuaikan posisi kanan agar tidak tumpang tindih dengan sidebar kanan */
+  bottom: 0;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  z-index: 2;
+  width: 30%; /* Memberikan lebar eksplisit untuk kolom gambar profil */
+  max-width: 500px; /* Batasi lebar maksimum gambar profil */
+  padding-right: 20px; /* Tambahkan padding agar gambar tidak terlalu mepet ke kanan */
+}
+
+.hero-profile-img {
+  max-height: 90%;
+  width: auto;
+  object-fit: contain;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-icon {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #98ff00;
+}
+
+/* Background abstrak */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+/* Responsif */
+@media (max-width: 991.98px) {
+  .hero-sidebar-left,
+  .hero-sidebar-right,
+  .hero-profile-col {
+    display: none !important; /* Sembunyikan sidebar dan gambar profil di layar kecil */
+  }
+
+  .hero-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    width: 100%; /* Konten mengambil lebar penuh */
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .work-process {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .title {
+    font-size: 4rem;
+  }
+}

@@ -1,0 +1,124 @@
+.navbar {
+  background-color: #000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 15px 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Sesuaikan dengan lebar konten Anda */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.logo {
+  margin-right: 10px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #98ff00;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+}
+
+.lets-talk-btn {
+  background-color: #98ff00;
+  color: #000;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.lets-talk-btn:hover {
+  background-color: #7ac200;
+}
+
+.menu-toggle {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 5px 10px;
+  margin-left: 15px;
+  cursor: pointer;
+  display: none; /* Sembunyikan di desktop */
+}
+
+.menu-toggle i {
+  font-size: 1.5rem;
+}
+
+/* Responsif */
+@media (max-width: 991.98px) {
+  .nav-links {
+    display: none; /* Sembunyikan di mobile secara default */
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 0;
+  }
+
+  .nav-links.open {
+    display: flex; /* Tampilkan saat menu terbuka */
+  }
+
+  .nav-link {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block; /* Tampilkan tombol toggle di mobile */
+  }
+
+  .lets-talk-btn {
+    margin-right: 15px; /* Beri jarak dari toggler di mobile */
+  }
+}
+
+@media (max-width: 767.98px) {
+  .lets-talk-btn {
+    display: none; /* Sembunyikan tombol "Let's Talk" di layar sangat kecil */
+  }
+}

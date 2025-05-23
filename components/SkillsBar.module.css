@@ -1,0 +1,47 @@
+.skills-bar {
+  background-color: #98ff00; /* Warna hijau neon sesuai gambar */
+  color: #000; /* Warna teks hitam */
+  font-weight: bold;
+  white-space: nowrap; /* Mencegah teks wrap */
+  overflow-x: auto; /* Memungkinkan scroll horizontal jika konten terlalu panjang */
+  -webkit-overflow-scrolling: touch; /* Untuk smooth scrolling di iOS */
+  display: flex; /* Menggunakan flexbox untuk item skill */
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.skills-bar .container-fluid {
+  display: flex;
+  flex-wrap: nowrap; /* Memastikan item tetap dalam satu baris */
+  justify-content: space-around;
+  animation: scrollSkills 30s linear infinite; /* Animasi scroll */
+}
+
+.skills-bar .skill-item {
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  flex-shrink: 0; /* Mencegah item menyusut */
+}
+
+/* Animasi scroll */
+@keyframes scrollSkills {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%); /* Sesuaikan jika perlu untuk loop yang mulus */
+  }
+}
+
+/* Hentikan animasi saat hover */
+.skills-bar:hover .container-fluid {
+  animation-play-state: paused;
+}
+
+/* Responsif */
+@media (max-width: 767.98px) {
+  .skills-bar .skill-item {
+    font-size: 0.9rem;
+    margin: 0 10px;
+  }
+}
