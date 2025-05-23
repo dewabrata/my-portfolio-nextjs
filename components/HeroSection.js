@@ -1,9 +1,8 @@
 "use client";
 
 import React from 'react';
-import Image from 'next/image';
 import styles from './HeroSection.module.css';
-import profileImage from '../public/images/profile.png';
+import SimliAgentComponent from '../app/SimliAgent';
 
 function HeroSection() {
   return (
@@ -36,9 +35,9 @@ function HeroSection() {
           </div>
         </div>
 
-        {/* Profile Image Column */}
+        {/* Simli Agent Avatar Column */}
         <div className={styles['hero-profile-col']}>
-          <Image src={profileImage} alt="Profile" className={styles['hero-profile-img']} width={500} height={700} />
+          <SimliAgentComponent />
         </div>
 
         {/* Right Sidebar */}

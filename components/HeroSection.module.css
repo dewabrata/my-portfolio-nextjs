@@ -147,24 +147,28 @@
 }
 
 .hero-profile-col {
-  position: absolute;
-  right: 80px; /* Sesuaikan posisi kanan agar tidak tumpang tindih dengan sidebar kanan */
+  position: relative; /* Ubah dari absolute ke relative untuk kontrol yang lebih baik */
+  right: 0;
   bottom: 0;
   height: 100%;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  z-index: 2;
-  width: 30%; /* Memberikan lebar eksplisit untuk kolom gambar profil */
-  max-width: 500px; /* Batasi lebar maksimum gambar profil */
-  padding-right: 20px; /* Tambahkan padding agar gambar tidak terlalu mepet ke kanan */
+  align-items: center; /* Pusatkan secara vertikal */
+  justify-content: center; /* Pusatkan secara horizontal */
+  z-index: 6; /* Pastikan di atas konten lain */
+  width: 40%; /* Berikan lebar yang cukup untuk avatar */
+  max-width: 600px; /* Batasi lebar maksimum */
+  padding-right: 20px;
 }
 
-.hero-profile-img {
-  max-height: 90%;
-  width: auto;
-  object-fit: contain;
+.hero-profile-col > div { /* Gaya untuk kontainer SimliAgentComponent */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
 
 .social-icons {
   display: flex;

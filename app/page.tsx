@@ -7,6 +7,7 @@ import WorkSection from "../components/WorkSection";
 import ServicesSection from "../components/ServicesSection";
 import TestimonialSection from "../components/TestimonialSection";
 import SkillsBar from "../components/SkillsBar";
+import GeminiChatbot from "../components/GeminiChatbot";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <ServicesSection />
       <TestimonialSection />
       <SkillsBar />
+      <GeminiChatbot /> {/* Tambahkan GeminiChatbot di sini untuk pengujian */}
     </>
   );
 }
